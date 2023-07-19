@@ -42,9 +42,5 @@ func Login(c *fiber.Ctx) error {
 	})
 }
 func Protected(c *fiber.Ctx) error {
-	// Get the user from the context and return it
-	user := c.Locals("username").(*jtoken.Token)
-	claims := user.Claims.(jtoken.MapClaims)
-	email := claims["email"].(string)
-	return c.SendString("Welcome 👋" + email)
+	return c.SendString("Welcome 👋")
 }

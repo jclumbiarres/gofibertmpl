@@ -19,8 +19,11 @@ func main() {
 	})
 
 	app.Static("/assets", "./assets")
+
 	app.Get("/protected", jwt, controllers.Protected)
+
 	app.Post("/login", controllers.Login)
+
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("index", fiber.Map{
 			"Title": "Hello, World!",
