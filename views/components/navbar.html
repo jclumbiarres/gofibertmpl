@@ -1,9 +1,23 @@
 {{define "components/navbar"}}
-<nav class="bg-gray-800">
-    <ul class="flex justify-between items-center py-4 px-6">
-        <li><a href="#" class="text-gray-300 hover:text-white">Inicio</a></li>
-        <li><a href="#" class="text-gray-300 hover:text-white">Acerca</a></li>
-        <li><a href="#" class="text-gray-300 hover:text-white">Contacto</a></li>
-    </ul>
-</nav>
+<nav class="bg-gray-800 text-white">
+    <div class="max-w-7xl mx-auto flex justify-between py-4 px-4 sm:px-6 lg:px-8">
+      <a href="/" class="text-lg font-semibold">
+        <span class="text-gray-100">APP</span>
+      </a>
+      <ul class="flex justify-end">
+        <li class="mr-3">
+          <a href="/home" class="text-white">Inicio</a>
+        </li>
+        <li class="mr-3">
+          <a href="/login" class="text-white">Login</a>
+        </li>
+        <li class="mr-3">
+          <a href="/about" class="text-white">Acerca</a>
+        </li>
+        <li class="mr-3">
+          <a href="/contact" class="text-white">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 {{end}}
