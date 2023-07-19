@@ -6,8 +6,8 @@ import (
 	"github.com/jclumbiarres/gofibertmpl/models"
 )
 
-func FindByCredentials(email, password string) (*models.User, error) {
-	if email == "test@mail.com" && password == "test12345" {
+func FindByCredentials(username, password string) (*models.User, error) {
+	if username == "test@mail.com" && password == "test12345" {
 		return &models.User{
 			ID:       1,
 			Password: "test12345",

@@ -5,3 +5,4 @@ Template simple de Go con Fiber y template/html.
 * Ruta estática para los assets creada /assets
 * Ejemplo de template partials con el head.html
 * Añadido soporte tailwindcss
+* Añadido soporte JWT y Login
