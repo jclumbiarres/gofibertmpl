@@ -8,9 +8,12 @@ import (
 	"github.com/jclumbiarres/gofibertmpl/config"
 	"github.com/jclumbiarres/gofibertmpl/controllers"
 	"github.com/jclumbiarres/gofibertmpl/middleware"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 func main() {
+	iniciaBD()
 	jwt := middleware.NewAuthMiddleware(config.Secret)
 	engine := html.New("./views", ".html")
 
@@ -31,4 +34,13 @@ func main() {
 	})
 
 	log.Fatal(app.Listen(":3000"))
+}
+
+func iniciaBD() {
+	var err error
+	controllers.DB, err = gorm.Open(postgres.Open(config.PostgreCONNTXT))
+	if err != nil {
+		panic("Error al conectar a la base de datos.")
+	}
+	log.Println("Conectado a la base de datos.")
 }
